@@ -17,9 +17,6 @@ public class PlaceOrderPage extends TestBase {
 	
 	//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	
-//	@FindBy(id="cartur")
-//	WebElement cart;
-	
 	@FindBy(id="name")
 	WebElement name;
 	
@@ -50,24 +47,22 @@ public class PlaceOrderPage extends TestBase {
 	}
 	
 	public void Placeorder() throws InterruptedException{
+		
 		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		Thread.sleep(3000);
 		placeorder.click();		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		name.sendKeys("Mohanapriya");
-//		wait.until(ExpectedConditions.visibilityOf(country));
 		country.sendKeys("India");
-//		wait.until(ExpectedConditions.visibilityOf(city));
 		city.sendKeys("Salem");
-//		wait.until(ExpectedConditions.visibilityOf(card));
 		card.sendKeys("123456");
-//		wait.until(ExpectedConditions.visibilityOf(month));
 		month.sendKeys("3");
-//		wait.until(ExpectedConditions.visibilityOf(year));
 		year.sendKeys("2023");
-	wait.until(ExpectedConditions.visibilityOf(purchase));
+	    wait.until(ExpectedConditions.visibilityOf(purchase));
 		wait.until(ExpectedConditions.elementToBeClickable(purchase));
 		purchase.click();
+		Thread.sleep(3000);
 		
 	}
 	

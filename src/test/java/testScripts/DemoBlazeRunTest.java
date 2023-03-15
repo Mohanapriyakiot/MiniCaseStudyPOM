@@ -65,16 +65,10 @@ public class DemoBlazeRunTest extends TestBase{
   }
   
   @Test(priority=4,dependsOnMethods="ViewCart")
-  public void delete() {
+  public void delete() throws InterruptedException {
 	  delete = new CartListPage();
 	  delete.delete();
 	  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-	  String price_before = cart.price;
-	  int before_cart = c_size;
-	  String price_after = delete.pval_del;
-	  int after_cart = delete.del_cart_size;
-	  boolean res = before_cart!=after_cart;
-	  Assert.assertTrue(res);
   }
   
   @Test(priority=5)

@@ -27,11 +27,9 @@ public class AddToCartPage extends TestBase {
 		
 	public void selectItems(String data) throws InterruptedException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-	//	driver.findElement(By.partialLinkText(Category));
-	//	Category.click();
-//		driver.findElement(By.partialLinkText(Product));
-//		Product.click();
-		
+		Thread.sleep(3000);
+		home.click();
+		Thread.sleep(3000);
 		driver.findElement(By.linkText(data)).click();
 	//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(addtocartbtn));
