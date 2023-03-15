@@ -25,14 +25,15 @@ public class AddToCartPage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 		
-	public void selectItems(String data) {
+	public void selectItems(String data) throws InterruptedException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	//	driver.findElement(By.partialLinkText(Category));
 	//	Category.click();
 //		driver.findElement(By.partialLinkText(Product));
 //		Product.click();
-		driver.findElement(By.linkText(data)).click();
 		
+		driver.findElement(By.linkText(data)).click();
+	//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(addtocartbtn));
 		addtocartbtn.click();		
 		wait.until(ExpectedConditions.alertIsPresent());

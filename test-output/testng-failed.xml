@@ -5,9 +5,12 @@
     <classes>
       <class name="testScripts.DemoBlazeRunTest">
         <methods>
+          <include name="ViewCart"/>
+          <include name="delete"/>
           <include name="setup"/>
-          <include name="selectItems" invocation-numbers="0"/>
+          <include name="selectItems"/>
           <include name="PlaceOrder"/>
+          <include name="userloginTest"/>
         </methods>
       </class> <!-- testScripts.DemoBlazeRunTest -->
     </classes>

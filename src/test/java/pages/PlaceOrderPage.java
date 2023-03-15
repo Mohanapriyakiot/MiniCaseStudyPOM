@@ -15,6 +15,8 @@ public class PlaceOrderPage extends TestBase {
 	@FindBy(xpath="//button[@class='btn btn-success']")
 	WebElement placeorder;
 	
+	//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	
 //	@FindBy(id="cartur")
 //	WebElement cart;
 	
@@ -39,7 +41,9 @@ public class PlaceOrderPage extends TestBase {
 	@FindBy(xpath="//button[text()='Purchase']")
 	public WebElement purchase;
 	
+	
 	@FindBy(xpath="//h2[text()='Thank you for your purchase!']")
+	
 	public WebElement message;
 	public PlaceOrderPage() {
 		PageFactory.initElements(driver, this);
@@ -61,7 +65,7 @@ public class PlaceOrderPage extends TestBase {
 		month.sendKeys("3");
 //		wait.until(ExpectedConditions.visibilityOf(year));
 		year.sendKeys("2023");
-//		wait.until(ExpectedConditions.visibilityOf(purchase));
+	wait.until(ExpectedConditions.visibilityOf(purchase));
 		wait.until(ExpectedConditions.elementToBeClickable(purchase));
 		purchase.click();
 		

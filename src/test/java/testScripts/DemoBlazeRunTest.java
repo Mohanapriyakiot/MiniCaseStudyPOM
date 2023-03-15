@@ -48,7 +48,7 @@ public class DemoBlazeRunTest extends TestBase{
   }
   
   @Test(priority=2,dataProvider = "data")
-  public void selectItems(String data) {
+  public void selectItems(String data) throws InterruptedException {
 	   selectItems = new AddToCartPage();
 	   selectItems.selectItems(data);
 	  
