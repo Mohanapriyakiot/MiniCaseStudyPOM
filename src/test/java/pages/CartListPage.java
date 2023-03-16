@@ -72,7 +72,7 @@ import base.TestBase;
 		//	int iAfter=Integer.parseInt(valueAfter);
 			Assert.assertNotEquals("valueBefore", "valueAfter");						
 		}
-		public void Placeorder() throws InterruptedException{		
+		public void placeorder() throws InterruptedException{		
 			wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 			Thread.sleep(3000);

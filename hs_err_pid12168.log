@@ -1,0 +1,165 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=12168, tid=0x00000000000003a4
+#
+# JRE version:  (8.0_202-b08) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.202-b08 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000036fb800):  JavaThread "Unknown thread" [_thread_in_vm, id=932, stack(0x00000000035f0000,0x00000000036f0000)]
+
+Stack: [0x00000000035f0000,0x00000000036f0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000036fb800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=932, stack(0x00000000035f0000,0x00000000036f0000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000a1400000, size: 1516 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 28672K, used 491K [0x00000000e0700000, 0x00000000e2700000, 0x0000000100000000)
+  eden space 24576K, 2% used [0x00000000e0700000,0x00000000e077ae20,0x00000000e1f00000)
+  from space 4096K, 0% used [0x00000000e2300000,0x00000000e2300000,0x00000000e2700000)
+  to   space 4096K, 0% used [0x00000000e1f00000,0x00000000e1f00000,0x00000000e2300000)
+ ParOldGen       total 65536K, used 0K [0x00000000a1400000, 0x00000000a5400000, 0x00000000e0700000)
+  object space 65536K, 0% used [0x00000000a1400000,0x00000000a1400000,0x00000000a5400000)
+ Metaspace       used 775K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000012bb0000,0x0000000012eb0000] byte_map_base: 0x00000000126a6000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006c975ce0
+ Begin Bits: [0x00000000138b0000, 0x0000000015060000)
+ End Bits:   [0x0000000015060000, 0x0000000016810000)
+
+Polling page: 0x0000000003410000
+
+CodeCache: size=245760Kb used=327Kb max_used=327Kb free=245432Kb
+ bounds [0x00000000037f0000, 0x0000000003a60000, 0x00000000127f0000]
+ total_blobs=57 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.040 loading class java/lang/Short
+Event: 0.040 loading class java/lang/Short done
+Event: 0.040 loading class java/lang/Integer
+Event: 0.040 loading class java/lang/Integer done
+Event: 0.040 loading class java/lang/Long
+Event: 0.040 loading class java/lang/Long done
+Event: 0.041 loading class java/lang/NullPointerException
+Event: 0.041 loading class java/lang/NullPointerException done
+Event: 0.041 loading class java/lang/ArithmeticException
+Event: 0.041 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff6b7940000 - 0x00007ff6b7977000 	C:\Program Files\Java\jdk1.8.0_202\bin\javaw.exe
+0x00007ffc69910000 - 0x00007ffc69b24000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffc69270000 - 0x00007ffc69333000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffc67380000 - 0x00007ffc6771c000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffc64930000 - 0x00007ffc649c7000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007ffc2a230000 - 0x00007ffc2a6ce000 	C:\WINDOWS\SYSTEM32\AcLayers.DLL
+0x00007ffc68ce0000 - 0x00007ffc68d87000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffc69340000 - 0x00007ffc6939e000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007ffc62e90000 - 0x00007ffc62ea5000 	C:\WINDOWS\SYSTEM32\SortWindows6Compat.dll
+0x00007ffc67dc0000 - 0x00007ffc67e6e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffc693a0000 - 0x00007ffc69444000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffc68bc0000 - 0x00007ffc68cd5000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffc67e70000 - 0x00007ffc6801d000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffc66ec0000 - 0x00007ffc66ee6000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffc69100000 - 0x00007ffc69129000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffc671c0000 - 0x00007ffc672d3000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffc672e0000 - 0x00007ffc6737a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffc670a0000 - 0x00007ffc671b1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffc4e8a0000 - 0x00007ffc4eb2e000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.608_none_a9444ca7c10bb01d\COMCTL32.dll
+0x00007ffc69030000 - 0x00007ffc69061000 	C:\WINDOWS\System32\IMM32.DLL
+0x000000006ca00000 - 0x000000006cad2000 	C:\Program Files\Java\jdk1.8.0_202\jre\bin\msvcr100.dll
+0x000000006c150000 - 0x000000006c9f5000 	C:\Program Files\Java\jdk1.8.0_202\jre\bin\server\jvm.dll
+0x00007ffc68bb0000 - 0x00007ffc68bb8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffc61300000 - 0x00007ffc61334000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffc64ee0000 - 0x00007ffc64eea000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffc62e40000 - 0x00007ffc62e49000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffc67b60000 - 0x00007ffc67bd1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffc62710000 - 0x00007ffc6271f000 	C:\Program Files\Java\jdk1.8.0_202\jre\bin\verify.dll
+0x00007ffc55790000 - 0x00007ffc557b9000 	C:\Program Files\Java\jdk1.8.0_202\jre\bin\java.dll
+0x00007ffc55770000 - 0x00007ffc55786000 	C:\Program Files\Java\jdk1.8.0_202\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=Cp1252 
+java_command: org.testng.remote.RemoteTestNG -serport 50372 -protocol json -d E:\SDET Training WS\MiniCaseStudyPOM\test-output C:\Users\MOHANA~1\AppData\Local\Temp\testng-eclipse-1668632556\testng-customsuite.xml
+java_class_path (initial): C:\Users\mohanapriya\eclipse\java-2022-03\eclipse\configuration\org.eclipse.osgi\433\0\.cp\lib\testng-remote.jar;E:\SDET Training WS\MiniCaseStudyPOM\target\test-classes;E:\SDET Training WS\MiniCaseStudyPOM\target\classes;C:\Users\mohanapriya\.p2\pool\plugins\org.testng_7.4.0.r202105021533.jar;C:\Users\mohanapriya\.p2\pool\plugins\com.beust.jcommander_1.78.0.jar;C:\Users\mohanapriya\.p2\pool\plugins\org.apache-extras.beanshell.bsh_2.0.0.b6.jar;C:\Users\mohanapriya\.p2\pool\plugins\org.yaml.snakeyaml_1.21.0.jar;C:\Users\mohanapriya\.p2\pool\plugins\org.webjars.jquery_3.5.1.jar;C:\Users\mohanapriya\.m2\repository\org\seleniumhq\selenium\selenium-api\4.6.0\selenium-api-4.6.0.jar;C:\Users\mohanapriya\.m2\repository\org\seleniumhq\selenium\selenium-java\4.6.0\selenium-java-4.6.0.jar;C:\Users\mohanapriya\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.6.0\selenium-chrome-driver-4.6.0.jar;C:\Users\mohanapriya\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\mohanapriya\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\mohanapriya\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\mohanapriya\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\mohanapriya\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\mohanapriya\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\mohanapriya\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\mohanapriya\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\mohanapriya\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\mohanapriya\.m2\repository\com\google\j2objc\j2objc-annotati
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_202
+PATH=C:/Users/mohanapriya/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin/server;C:/Users/mohanapriya/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_202;C:\Program Files\apache-maven-3.9.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Program Files\apache-maven-3.9.0\bin;C:\Program Files\Git\cmd;C:\Users\mohanapriya\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\mohanapriya\AppData\Local\Programs\Python\Python37\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Python\Python37\Scripts\;C:\Python\Python37\;C:\Users\mohanapriya\AppData\Local\Microsoft\WindowsApps;C:\Program Files\CodeBlocks\MinGW\bin;C:\Users\mohanapriya\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mohanapriya\OneDrive\Desktop;
+USERNAME=mohanapriya
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 22621 (10.0.22621.1344)
+
+CPU:total 8 (initial active 8) (8 cores per cpu, 1 threads per core) family 23 model 24 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 6203148k(1593500k free), swap 8300300k(5476k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.202-b08) for windows-amd64 JRE (1.8.0_202-b08), built on Dec 15 2018 19:54:30 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Mar 16 18:54:48 2023
+timezone: India Standard Time
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

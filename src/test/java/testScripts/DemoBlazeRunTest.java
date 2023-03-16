@@ -38,7 +38,7 @@ public class DemoBlazeRunTest extends TestBase{
 		initialize();
 	}
   @Test(priority=1)
-  public void Homepage() throws InterruptedException {
+  public void homepage() throws InterruptedException {
 	  homepage = new HomePage();
 	  loginpage=homepage.login();
 	  homepage=loginpage.login();  
@@ -49,10 +49,10 @@ public class DemoBlazeRunTest extends TestBase{
 	  homepage.selectItems(data);
   }
   @Test(priority=3)
-  public void CartList() throws InterruptedException {
+  public void cartList() throws InterruptedException {
 	  cart = new CartListPage();
 	  cart.delete();
-	  cart.Placeorder();	
+	  cart.placeorder();	
 	  WebElement msg = cart.message;
 	  Assert.assertTrue(msg.isDisplayed());	    
   } 
