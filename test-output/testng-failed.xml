@@ -5,8 +5,9 @@
     <classes>
       <class name="testScripts.DemoBlazeRunTest">
         <methods>
-          <include name="CartList"/>
           <include name="setup"/>
+          <include name="multiItems" invocation-numbers="1"/>
+          <include name="cartList"/>
         </methods>
       </class> <!-- testScripts.DemoBlazeRunTest -->
     </classes>
