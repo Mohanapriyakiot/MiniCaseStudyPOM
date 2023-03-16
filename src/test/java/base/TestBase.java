@@ -14,12 +14,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
-
 public class TestBase {
     public static Properties prop=null;
     public static WebDriver driver=null;
-   
     public TestBase() {
     String path=System.getProperty("user.dir")+"//src//test//resources//configFiles//config.properties";
     prop=new Properties();
@@ -39,12 +36,6 @@ public class TestBase {
     }
     }
     public static void initialize() {
-   
-//   String Browser=prop.getProperty("browser");    
-//    if(Browser.equalsIgnoreCase("edge")) {
-//    WebDriverManager.edgedriver().setup();
-//    driver=new EdgeDriver();    
-//    }
     String Browser=prop.getProperty("browser");    
     if(Browser.equalsIgnoreCase("Chrome")) {
     	WebDriverManager.chromedriver().setup();

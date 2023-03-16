@@ -27,16 +27,12 @@ import pages.CartListPage;
 import pages.HomePage;
 import pages.LoginPage;
 
-
-public class DemoBlazeRunTest extends TestBase{
-	
+public class DemoBlazeRunTest extends TestBase{	
 	HomePage homepage;
 	LoginPage loginpage;
 	WebDriverWait wait;
 	LoginPage login;
     CartListPage cart;
-   
-
 	@BeforeTest
 	public void setup() {
 		initialize();
@@ -44,20 +40,14 @@ public class DemoBlazeRunTest extends TestBase{
   @Test(priority=1)
   public void Homepage() throws InterruptedException {
 	  homepage = new HomePage();
-//	  homepage.login();  
-//	  loginpage=homepage.login();
 	  loginpage=homepage.login();
-	  homepage=loginpage.login();
-	  
+	  homepage=loginpage.login();  
   }
   @Test(priority=2,dataProvider="data")
   public void multiItems(String data) throws InterruptedException {
 	  homepage=new HomePage();
 	  homepage.selectItems(data);
-	//  homepage.cart();
   }
-  
-  
   @Test(priority=3)
   public void CartList() throws InterruptedException {
 	  cart = new CartListPage();
@@ -65,8 +55,7 @@ public class DemoBlazeRunTest extends TestBase{
 	  cart.Placeorder();	
 	  WebElement msg = cart.message;
 	  Assert.assertTrue(msg.isDisplayed());	    
-  }
-  
+  } 
   @DataProvider(name="data")
   public Object[][] getData1() throws CsvValidationException, IOException{
 	  String path=System.getProperty("user.dir")+"//src//test//resources//testData//data.csv";

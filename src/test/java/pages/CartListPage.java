@@ -13,17 +13,12 @@ import org.testng.Assert;
 
 import base.TestBase;
 
-
-
-	public class CartListPage extends TestBase{
-		
+	public class CartListPage extends TestBase{	
 		WebDriverWait wait;
-	//	public String price;
-		
+	//	public String price;	
 		@FindBy(id="cartur")
 		WebElement cart;
-		
-		
+			
 		@FindBy(xpath="//tbody//td[2]")
 		public List<WebElement> items_in_cart;
 		
@@ -56,8 +51,7 @@ import base.TestBase;
 		
 		@FindBy(xpath="//button[text()='Purchase']")
 		public WebElement purchase;
-		
-		
+			
 		@FindBy(xpath="//h2[text()='Thank you for your purchase!']")
 		
 		public WebElement message;
@@ -69,8 +63,7 @@ import base.TestBase;
 		public void delete() throws InterruptedException {
 			WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.elementToBeClickable(cart)).click();
-			wait.until(ExpectedConditions.visibilityOf(price));
-			
+			wait.until(ExpectedConditions.visibilityOf(price));	
 			String valueBefore = price.getText();
 		//	int iBefore=Integer.parseInt(valueBefore);
 			wait.until(ExpectedConditions.elementToBeClickable(deletebtn)).click();
@@ -79,9 +72,7 @@ import base.TestBase;
 		//	int iAfter=Integer.parseInt(valueAfter);
 			Assert.assertNotEquals("valueBefore", "valueAfter");						
 		}
-		
-		public void Placeorder() throws InterruptedException{
-			
+		public void Placeorder() throws InterruptedException{		
 			wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 			Thread.sleep(3000);

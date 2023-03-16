@@ -12,9 +12,6 @@ import base.TestBase;
 
 public class LoginPage extends TestBase {
 	WebDriverWait wait;
-//	@FindBy(id="login2")
-//	WebElement loginBtn;
-	
 	@FindBy(id="loginusername")
 	WebElement inputUsr;
 	
@@ -23,8 +20,6 @@ public class LoginPage extends TestBase {
 	
 	@FindBy(xpath="(//button[@class='btn btn-primary'])[3]")
 	WebElement userLogin;
-	
-
 	
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
@@ -39,9 +34,6 @@ public class LoginPage extends TestBase {
 		userLogin.click();	
 		return new HomePage();
 	}
-
-//	
-//}
 	
 	}
 

@@ -15,15 +15,9 @@ import base.TestBase;
 public class HomePage  extends TestBase{
 	Alert alert;
     WebDriverWait wait;
-    
-//    @FindBy(xpath="//a[contains(text(),'Home')]")
-//	public WebElement home;
-
 	@FindBy(id="login2")
 	WebElement loginBtn;
-	
-	
-	
+		
 	@FindBy(id="cartur")
 	WebElement cart;
 	
@@ -36,13 +30,11 @@ public class HomePage  extends TestBase{
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
-
 	public LoginPage login() {
 		
 		loginBtn.click();
 		return new LoginPage();
 	}
-	
 	public void selectItems(String data) throws InterruptedException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		Thread.sleep(3000);
