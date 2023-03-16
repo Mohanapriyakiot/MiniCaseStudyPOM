@@ -7,8 +7,13 @@ import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -17,66 +22,49 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 import base.TestBase;
-import pages.AddToCartPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.CartListPage;
 import pages.HomePage;
-import pages.PlaceOrderPage;
-import pages.ViewCartPage;
+import pages.LoginPage;
+
 
 public class DemoBlazeRunTest extends TestBase{
 	
 	HomePage homepage;
+	LoginPage loginpage;
 	WebDriverWait wait;
-    AddToCartPage selectItems;
-    ViewCartPage cart;
-    CartListPage delete;
-    PlaceOrderPage order;
-    String p_val;
-    public int c_size;
-    String del_p_val;
-    public int del_c_size;
-	
+	LoginPage login;
+    CartListPage cart;
+   
+
 	@BeforeTest
 	public void setup() {
 		initialize();
 	}
   @Test(priority=1)
-  public void userloginTest() {
+  public void Homepage() throws InterruptedException {
 	  homepage = new HomePage();
-	  homepage.login();  
-	  wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-  }
-  
-  @Test(priority=2,dataProvider = "data")
-  public void selectItems(String data) throws InterruptedException {
-	   selectItems = new AddToCartPage();
-	   selectItems.selectItems(data);
+//	  homepage.login();  
+//	  loginpage=homepage.login();
+	  loginpage=homepage.login();
+	  homepage=loginpage.login();
 	  
   }
+  @Test(priority=2,dataProvider="data")
+  public void multiItems(String data) throws InterruptedException {
+	  homepage=new HomePage();
+	  homepage.selectItems(data);
+	//  homepage.cart();
+  }
+  
   
   @Test(priority=3)
-  public void ViewCart() {
-	  cart = new ViewCartPage();
-	  cart.cart();
-	  c_size = cart.cart_size;
-	  p_val = cart.price;
-	  
-	  
-  }
-  
-  @Test(priority=4,dependsOnMethods="ViewCart")
-  public void delete() throws InterruptedException {
-	  delete = new CartListPage();
-	  delete.delete();
-	  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-  }
-  
-  @Test(priority=5)
-  public void PlaceOrder() throws InterruptedException {
-	  order = new PlaceOrderPage();
-	  order.Placeorder();
-	  WebElement msg = order.message;
-	  Assert.assertTrue(msg.isDisplayed());
+  public void CartList() throws InterruptedException {
+	  cart = new CartListPage();
+	  cart.delete();
+	  cart.Placeorder();	
+	  WebElement msg = cart.message;
+	  Assert.assertTrue(msg.isDisplayed());	    
   }
   
   @DataProvider(name="data")
@@ -90,8 +78,8 @@ public class DemoBlazeRunTest extends TestBase{
 		  Object[] record= {cols[0]};
 		  dataList.add(record);
 	  }
-	  return dataList.toArray(new Object[dataList.size()][]);
-	  
+	  return dataList.toArray(new Object[dataList.size()][]);  
   }
+  
 }
 

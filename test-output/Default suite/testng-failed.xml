@@ -5,8 +5,7 @@
     <classes>
       <class name="testScripts.DemoBlazeRunTest">
         <methods>
-          <include name="ViewCart"/>
-          <include name="delete"/>
+          <include name="CartList"/>
           <include name="setup"/>
         </methods>
       </class> <!-- testScripts.DemoBlazeRunTest -->

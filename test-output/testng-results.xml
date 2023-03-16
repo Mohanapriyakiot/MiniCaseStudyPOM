@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="40410" started-at="2023-03-15T12:40:20 IST" finished-at="2023-03-15T12:41:00 IST">
+  <suite name="Default suite" duration-ms="44604" started-at="2023-03-16T15:13:34 IST" finished-at="2023-03-16T15:14:18 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="40410" started-at="2023-03-15T12:40:20 IST" finished-at="2023-03-15T12:41:00 IST">
+    <test name="Default test" duration-ms="44604" started-at="2023-03-16T15:13:34 IST" finished-at="2023-03-16T15:14:18 IST">
       <class name="testScripts.DemoBlazeRunTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="setup" is-config="true" duration-ms="9252" started-at="2023-03-15T12:40:20 IST" finished-at="2023-03-15T12:40:29 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="setup" is-config="true" duration-ms="8747" started-at="2023-03-16T15:13:34 IST" finished-at="2023-03-16T15:13:42 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="userloginTest()[pri:1, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="userloginTest" duration-ms="514" started-at="2023-03-15T12:40:29 IST" finished-at="2023-03-15T12:40:30 IST">
+        <test-method status="PASS" signature="Homepage()[pri:1, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="Homepage" duration-ms="3323" started-at="2023-03-16T15:13:42 IST" finished-at="2023-03-16T15:13:46 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userloginTest -->
-        <test-method status="PASS" signature="selectItems(java.lang.String)[pri:2, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="selectItems" duration-ms="10196" started-at="2023-03-15T12:40:30 IST" data-provider="data" finished-at="2023-03-15T12:40:40 IST">
+        </test-method> <!-- Homepage -->
+        <test-method status="PASS" signature="multiItems(java.lang.String)[pri:2, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="multiItems" duration-ms="9165" started-at="2023-03-16T15:13:46 IST" data-provider="data" finished-at="2023-03-16T15:13:55 IST">
           <params>
             <param index="0">
               <value>
@@ -25,8 +25,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectItems -->
-        <test-method status="PASS" signature="selectItems(java.lang.String)[pri:2, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="selectItems" duration-ms="10771" started-at="2023-03-15T12:40:40 IST" data-provider="data" finished-at="2023-03-15T12:40:51 IST">
+        </test-method> <!-- multiItems -->
+        <test-method status="PASS" signature="multiItems(java.lang.String)[pri:2, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="multiItems" duration-ms="9333" started-at="2023-03-16T15:13:55 IST" data-provider="data" finished-at="2023-03-16T15:14:04 IST">
           <params>
             <param index="0">
               <value>
@@ -36,19 +36,11 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectItems -->
-        <test-method status="PASS" signature="ViewCart()[pri:3, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="ViewCart" duration-ms="2587" started-at="2023-03-15T12:40:51 IST" finished-at="2023-03-15T12:40:53 IST">
+        </test-method> <!-- multiItems -->
+        <test-method status="PASS" signature="CartList()[pri:3, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="CartList" duration-ms="13909" started-at="2023-03-16T15:14:04 IST" finished-at="2023-03-16T15:14:18 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ViewCart -->
-        <test-method status="PASS" signature="delete()[pri:4, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="delete" duration-ms="129" started-at="2023-03-15T12:40:53 IST" depends-on-methods="testScripts.DemoBlazeRunTest.ViewCart" finished-at="2023-03-15T12:40:53 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delete -->
-        <test-method status="PASS" signature="PlaceOrder()[pri:5, instance:testScripts.DemoBlazeRunTest@5c18298f]" name="PlaceOrder" duration-ms="6877" started-at="2023-03-15T12:40:53 IST" finished-at="2023-03-15T12:41:00 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PlaceOrder -->
+        </test-method> <!-- CartList -->
       </class> <!-- testScripts.DemoBlazeRunTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
